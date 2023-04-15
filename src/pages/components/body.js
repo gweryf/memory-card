@@ -74,7 +74,8 @@ export default function Body(props) {
             {cards.map((card)=>(
                 <Card
                     gamelogic = {gamelogic}
-                    card = {card}
+                    title = {card.title}
+                    src = {card.src}
                 />
             ))}
         </div>

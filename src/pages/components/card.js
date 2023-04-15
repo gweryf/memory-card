@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 export default function  Card(props) {
-    const {gamelogic, card:{title, src}} = props
+    const {gamelogic, title, src} = props
     return(
         <button
             onClick={() => gamelogic(title)}
