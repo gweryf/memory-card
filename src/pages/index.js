@@ -17,15 +17,41 @@ export default function Home() {
     sethighscore(score)
   }
 
+  function updateCards(cardname) {
+    addcards([...cards, cardname])
+  }
+
   function reset() {
     setScore(0)
     addcards([])
   }
 
+  function logic(cardname){
+    console.log('suck my cock!');
+    if(cards.includes(cardname)) {
+      if(highscore<score) {
+        updateHighscore()
+      }
+      reset()
+    } else {
+      updateScore()
+      updateCards(cardname)
+      console.log(score);
+      console.log(highscore);
+    }
+  }
+
   return (
     <>
-      <Header/>
-      <Body/>
+      <Header
+        score = {score}
+        highscore = {highscore}
+      />
+      <Body
+        score = {score}
+        highscore = {highscore}
+        gamelogic = {logic}
+      />
     </>
   )
 }
