@@ -27,6 +27,21 @@ export default function Body(props) {
     ]
     const [cards, setCards] = useState(images)
 
+    function shuffleCards(arr) {
+        let index = arr.length
+        while(index!=0) {
+            let randomIndex = Math.floor(Math.random()*index)
+            index--
+            [arr[index],arr[randomIndex]] = [arr[randomIndex], arr[index]]
+        }
+        return arr
+    }
+
+    useEffect(()=>{
+        const tiles = [...cards]
+        setCards(shuffleCards(tiles))
+    },[score, highscore])
+
     return(
         <div className=" bg-stone-900 h-screen">
             {cards.map((card)=>(
