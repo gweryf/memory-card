@@ -2,27 +2,54 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import Card from "./card";
+import panda from "../../../public/panda.png"
+import icebear from "../../../public/icebear.png"
+import grizz from "../../../public/grizz.png"
+import charlie from "../../../public/charlie.png"
+import chloe from "../../../public/chloe.png"
+import lucy from "../../../public/lucy.png"
+import nomnom from "../../../public/nomnom.png"
+import ranger from "../../../public/ranger.png"
+import martinez from "../../../public/rangermartinez.png"
 
 export default function Body(props) {
     const {score, highscore, gamelogic} = props
-    console.log(score);
-    console.log(gamelogic);
     let images = [
         {
-            title:'item1',
-
+            title:'panda',
+            src:panda
         },
         {
-            title:'item2',
-
+            title:'grizz',
+            src:grizz
         },
         {
-            title:'item3',
-
+            title:'ice bear',
+            src:icebear
         },
         {
-            title:'item4',
-
+            title:'charlie',
+            src:charlie
+        },
+        {
+            title:'chloe',
+            src:chloe
+        },
+        {
+            title:'lucy',
+            src:lucy
+        },
+        {
+            title:'nom-nom',
+            src:nomnom
+        },
+        {
+            title:'Ranger',
+            src:ranger
+        },
+        {
+            title:'Ranger Martinez',
+            src:martinez
         },
     ]
     const [cards, setCards] = useState(images)
@@ -43,11 +70,11 @@ export default function Body(props) {
     },[score, highscore])
 
     return(
-        <div className=" bg-stone-900 h-screen">
+        <div className=" bg-stone-700 py-4 h-full text-center">
             {cards.map((card)=>(
                 <Card
                     gamelogic = {gamelogic}
-                    title = {card.title}
+                    card = {card}
                 />
             ))}
         </div>
