@@ -27,7 +27,6 @@ export default function Home() {
   }
 
   function logic(cardname){
-    console.log('suck my cock!');
     if(cards.includes(cardname)) {
       if(highscore<score) {
         updateHighscore()
